@@ -1,0 +1,234 @@
+<section id="carousel">
+    <div class="slide-image" id="slide1">
+    </div>
+    <div class="slide-image" id="slide2">
+    </div>
+    <div class="slide-image" id="slide3">
+    </div>
+    <div class="slide-image" id="slide4">
+    </div>
+    <div class="slide-image" id="slide5">
+    </div>
+  </section>
+#slide1 {
+  background-image: url('../img/image1.jpg');
+}
+
+#slide2 {
+  background-image: url('../img/image2.jpg');
+}
+
+#slide3 {
+  background-image: url('../img/image3.jpg');
+}
+
+#slide4 {
+  background-image: url('../img/image4.jpg');
+}
+
+#slide5 {
+  background-image: url('../img/image5.jpg');
+}
+.slide-image {
+  width: 100vw;
+  height: 100vh;
+}
+.slide-image {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+#carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  height: 100vh;
+}
+
+.slide-image {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+$(document).ready(function(){
+  // We will write all our code here
+})
+$(document).ready(function(){
+
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides() {
+    // animation will go here
+  }
+
+})
+$(document).ready(function(){
+
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides() {
+    var $firstSlide = $('#carousel').find('div:first');
+  }
+
+})
+$(document).ready(function(){
+
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides(){
+    var $firstSlide = $('#carousel').find('div:first');
+    var width = $firstSlide.width();
+  }
+
+})
+$(document).ready(function(){
+  
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides(){
+    var $firstSlide = $('#carousel').find('div:first');
+    var width = $firstSlide.width();
+    
+    $firstSlide.animate({marginLeft: -width}, 1000, function(){
+      // What to do after the animation
+    })
+  }
+
+})
+$(document).ready(function(){
+  
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides(){
+    var $firstSlide = $('#carousel').find('div:first');
+    var width = $firstSlide.width();
+    
+    $firstSlide.animate({marginLeft: -width}, 1000, function(){
+      var $lastSlide = $('#carousel').find('div:last')
+      $lastSlide.after($firstSlide);
+    })
+  }
+
+})
+$(document).ready(function(){
+  
+  var interval = window.setInterval(rotateSlides, 3000)
+  
+  function rotateSlides(){
+    var $firstSlide = $('#carousel').find('div:first');
+    var width = $firstSlide.width();
+    
+    $firstSlide.animate({marginLeft: -width}, 1000, function(){
+      var $lastSlide = $('#carousel').find('div:last')
+      $lastSlide.after($firstSlide);
+      $firstSlide.css({marginLeft: 0})
+    })
+  }
+
+})
+section id="carousel">
+    <img src="img/arrow_left.svg" alt="Left Carousel Arrow" class="arrow" id="left-arrow">
+    <img src="img/arrow_right.svg" alt="Right Carousel Arrow" class="arrow" id="right-arrow">
+    <div class="slide-image" id="slide1">
+    </div>
+    ...
+</section>
+carousel {
+  ...
+  position: relative;
+}
+
+.arrow {
+  width: 5%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#right-arrow {
+  right: 20px;
+}
+
+#left-arrow {
+  left: 20px;
+}
+@media (max-device-width: 1024px) {
+  .arrow {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 10%;
+  }
+}
+$('#left-arrow').click(previousSlide);
+$('#right-arrow').click(nextSlide);
+$('.slide-image').click(nextSlide);
+
+function nextSlide(){
+  // Go to next slide
+}
+
+function previousSlide(){
+  // Go to previous slide
+}
+function nextSlide(){
+  window.clearInterval(interval);
+}
+function nextSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+}
+function nextSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+  $currentSlide.animate({marginLeft: -width}, 1000, function(){
+    var $lastSlide = $('#carousel').find('div:last')
+    $lastSlide.after($currentSlide);
+    $currentSlide.css({marginLeft: 0})
+  });
+}
+function nextSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+  $currentSlide.animate({marginLeft: -width}, 1000, function(){
+    var $lastSlide = $('#carousel').find('div:last')
+    $lastSlide.after($currentSlide);
+    $currentSlide.css({marginLeft: 0})
+    interval = window.setInterval(rotateSlides, 3000);
+  });
+}
+function previousSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+  var $previousSlide = $('#carousel').find('div:last')
+}
+function previousSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+  var $previousSlide = $('#carousel').find('div:last')
+  $previousSlide.css({marginLeft: -width})
+  $currentSlide.before($previousSlide);
+}
+function previousSlide(){
+  window.clearInterval(interval);
+  var $currentSlide = $('#carousel').find('div:first');
+  var width = $currentSlide.width();
+  var $previousSlide = $('#carousel').find('div:last')
+  $previousSlide.css({marginLeft: -width})
+  $currentSlide.before($previousSlide);
+  $previousSlide.animate({marginLeft: 0}, 1000, function(){
+    interval = window.setInterval(rotateSlides, 3000);
+  });
+}
