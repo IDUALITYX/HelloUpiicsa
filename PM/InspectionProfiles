@@ -1,0 +1,61 @@
+Project_Default.xml
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="ReplaceUntilWithRangeUntil" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+  </profile>
+</component>
+
+Kotlinc.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="KotlinJpsPluginSettings">
+    <option name="version" value="1.9.0" />
+  </component>
+</project>
+
+Misc.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="20" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
+
+
+Build.gradle.kts
+
+plugins {
+    kotlin("jvm") version "1.9.0"
+    application
+}
+
+group = "me.nathanerak"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
+
+kotlin {
+    jvmToolchain(8)
+}
+
+application {
+    mainClass.set("MainKt")
+}
+
+gradle.properties
+kotlin.code.style=official
